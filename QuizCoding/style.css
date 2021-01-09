@@ -1,0 +1,19 @@
+body{
+    background-color: gray;
+}
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+#startBtn{
+    border-width: 25px;
+    border-color: lightcoral;
+    margin-top: 25%;
+   margin-bottom: 45%;
+   margin-left: 45%;
+   margin-right: 45%;
+}
+.img{
+    border-style: solid;
+    border-color: lightgoldenrodyellow;
+}
