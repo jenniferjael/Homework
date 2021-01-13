@@ -18,7 +18,7 @@ var answerA = document.querySelector("#answerA");
 var answerB = document.querySelector("#answerB");
 var answerC = document.querySelector("#answerC");
 var scores = document.querySelector("#scores");
-var scoreBoard = document.querySelector('#scoreBoard');
+var scoreBoard = document.querySelector("#scoreBoard");
 
 var rightAnswers = 0;
 var wrongAnswers = 0;
@@ -69,28 +69,26 @@ function scoreboard() {
   // displaying high scores
 
   var array = storage.split(",");
-  console.log(array);
   for (var i = 0; i < array.length; i++) {
     var listTag = document.createElement("li");
     listTag.textContent = array[i];
     scores.appendChild(listTag);
-    }
-    scoreBoard.style.display = "block"; 
   }
-  
-  
-var seconds = 0;
+
+  scoreBoard.style.display = "inline";
+}
+var seconds = 10;
 
 function setTime() {
   var interval = setInterval(function () {
-    seconds++;
+    seconds--;
     timerEl.textContent = "Seconds: " + seconds;
-    if (seconds === 10) {
+    if (seconds === 0) {
       clearInterval(interval);
       // var questionnare to hide
       questionnaire.style.display = "none";
       // score board
-      alert('Game Over!');
+      alert("Game Over!");
       scoreboard();
     }
   }, 1000);

@@ -1,50 +1,51 @@
-body{
-    background-color: gray;
+body {
+  background-color: gray;
 }
-h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
 }
-#startBtn{
-    border-width: 25px;
-    border-color: lightcoral;
-    margin-top: 25%;
-   margin-bottom: 45%;
-   margin-left: 45%;
-   margin-right: 45%;
+#startBtn {
+  border-width: 25px;
+  border-color: lightcoral;
+  margin-top: 25%;
+  margin-bottom: 45%;
+  margin-left: 45%;
+  margin-right: 45%;
 }
-.img{
-    border-style: solid;
-    border-color: lightgoldenrodyellow;
+.img {
+  border-style: solid;
+  border-color: lightgoldenrodyellow;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
-#answerA{
-    display: block;
+#timer{
+    text-decoration: underline red;
+}
+#answerA {
+  display: block;
   width: 100%;
   border: none;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
   text-align: center;
- 
 }
-#answerB{
-    display: block;
-    width: 100%;
-    border: none;
-    background-color: pink;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-   
+#answerB {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: pink;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
-#answerC{
-    display: block;
+#answerC {
+  display: block;
   width: 100%;
   border: none;
   background-color: aquamarine;
@@ -52,5 +53,20 @@ h1{
   font-size: 16px;
   cursor: pointer;
   text-align: center;
- 
+}
+#scoreBoard h2 {
+  border-style: solid;
+  border-color: aqua;
+  padding: 14px 28px;
+  text-align: center;
+  text-decoration-color: blue;
+  background-color: darkcyan;
+}
+#scores {
+  border-style: solid;
+  border-color: aqua;
+  padding: 14px 28px;
+  text-align: center;
+  text-decoration-color: blue;
+  background-color: cadetblue;
 }
