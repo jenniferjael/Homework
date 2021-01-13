@@ -8,20 +8,28 @@
 </head>
 <body>
    <!-- Container holding title and start button-->
-   <div id="title">CODING TIMED QUIZ</div>
+   <div id="title">CODING TIMED QUIZ
+     <div>You only have 10 seconds to finish this quiz. Start Now!</div>
+   </div>
+
+   <!--adding a timer-->
+  <div id="timer"></div>
+
     <button id="startBtn">START BUTTON</button>
   </div>
   <!--section holding questions-->
   <div id="questionnaire" style="display: none;">
     <h2 id="question">question</h2>
-    <button id="answerA">question</button>
-    <button id="answerB">question</button>
-    <button id="answerC">question</button>
+    <button type="button" id="answerA">question</button>
+    <button type="button" id="answerB">question</button>
+    <button type="button" id="answerC">question</button>
   </div>
-  
-  <!--adding a continue bottom-->
 
-  <!--adding a timer-->
+ <div id="scoreBoard" style="display: none;">
+    <h2>High scores</h2>
+    <ul id="scores">
+    </ul>
+  </div>
 
 
   <script src="script.js"></script>
