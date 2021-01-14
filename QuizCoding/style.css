@@ -70,3 +70,24 @@ h1 {
   text-decoration-color: blue;
   background-color: cadetblue;
 }
+#finishBtn{
+  border-width: 10px;
+  border-color: lightcoral;
+  padding: 10px;
+  text-align: center;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+#startOver{
+  border-width: 10px;
+  border-color: lightcoral;
+  padding: 10px;
+  text-align: center;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+ul{
+  background-color:lightcoral;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}

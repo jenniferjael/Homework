@@ -1,10 +1,6 @@
-// Timer
-// questions
-// score
-
-var indexQuestions = 0;
-
 //getting all requiered elements
+var intructionsBox = document.querySelector('#instructionsBox');
+var boxInt = document.querySelector('#boxInt');
 var startBtn = document.querySelector("#startBtn");
 var timerEl = document.querySelector("#timer");
 var questions = document.querySelector("#questons");
@@ -19,66 +15,75 @@ var answerB = document.querySelector("#answerB");
 var answerC = document.querySelector("#answerC");
 var scores = document.querySelector("#scores");
 var scoreBoard = document.querySelector("#scoreBoard");
+var displayDoneBtn = document.querySelector("#displayDoneBtn");
+var finishBtn = document.querySelector("#finishBtn");
+var displayStartOver = document.querySelector("#displayStartOver");
+var startOver = document.querySelector("#startOver");
 
+//STARTING POINTS
+var indexQuestions = 0;
 var rightAnswers = 0;
 var wrongAnswers = 0;
 // Creating an array of objects for questions, answers, and options.
 var questions = [
   {
-    question: "1)what is html used for?",
+    question: "what is html used for?",
     answerIndex: 0,
     choices: [
-      " Html is used to create electronic documents that are displayed on the World Wide Web.",
-      " Html is hypertext.",
-      " Html is microsoft word.",
+      " a) Html is used to create electronic documents that are displayed on the World Wide Web.",
+      " b) Html is hypertext.",
+      " c) Html is microsoft word.",
     ],
   },
   {
-    question: "2)what does Css stand for?",
+    question: "what does Css stand for?",
     answerIndex: 1,
     choices: [
-      " Css stands for collins safe and sorry.",
-      " Css stands for Cascading Style Sheets.",
-      " Css saves a lot of work.",
+      " a) Css stands for collins safe and sorry.",
+      " b) Css stands for Cascading Style Sheets.",
+      " c) Css saves a lot of work.",
     ],
   },
   {
-    question: "3)what is the fuction of Javascript?",
+    question: "what is the fuction of Javascript?",
     answerIndex: 2,
     choices: [
-      " Javascript adds styling.",
-      " Javascript is the body of a Website.",
-      " Javascript adds dynamic and intereactive elements to websites.",
+      " a) Javascript adds styling.",
+      " b) Javascript is the body of a Website.",
+      " c) Javascript adds dynamic and intereactive elements to websites.",
     ],
   },
 ];
 
-// WHEN I click on the Start button, the Start function will be executed.
-// The Start button will hide and the displayQuestion function will be executed.
+//ADDING A PROMPT TO SAVE USER'S NAME
+  var name = prompt("what is your name?");
+ 
+//START BUTTON DISPLAYING TIMER AND QUESTIONS
 function start() {
+  boxInt.style.display = "none";
   startBtn.classList.add("hide");
   setTime();
   displayQuestion();
 }
-
+//SCORE BOARD FUNCTION
 function scoreboard() {
   //save current score
   var storage = localStorage.getItem("highScores");
   storage = storage + "," + rightAnswers;
   localStorage.setItem("highScores", storage);
-  // displaying high scores
-
   var array = storage.split(",");
   for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
     var listTag = document.createElement("li");
-    listTag.textContent = array[i];
+    listTag.textContent = name + "   " + "your score is" + "   " + array[i];
     scores.appendChild(listTag);
   }
-
   scoreBoard.style.display = "inline";
+  displayDoneBtn.style.display = "block";
+  displayStartOver.style.display = "block";
 }
+// SETTING THE TIMER
 var seconds = 10;
-
 function setTime() {
   var interval = setInterval(function () {
     seconds--;
@@ -94,6 +99,7 @@ function setTime() {
   }, 1000);
 }
 
+//DISPLAY QUESTIONS FROM ARRAY
 function displayQuestion() {
   questionnaire.style.display = "block";
   question.textContent = questions[indexQuestions].question;
@@ -102,9 +108,10 @@ function displayQuestion() {
   answerC.textContent = questions[indexQuestions].choices[2];
 }
 
+//CHOICES
+//SHOW NEXT QUESTION + EVENT LISTENERS
+//RIGHT/WRONG ANSWERS
 answerA.addEventListener("click", function () {
-  // show next question
-  // check for correct or wrong answer
   if (0 === questions[indexQuestions].answerIndex) {
     alert("Correct");
     rightAnswers++;
@@ -112,13 +119,11 @@ answerA.addEventListener("click", function () {
     alert("wrong");
     wrongAnswers++;
   }
-
   indexQuestions++;
   displayQuestion();
 });
 
 answerB.addEventListener("click", function () {
-  // show next question
   if (1 === questions[indexQuestions].answerIndex) {
     alert("Correct");
     rightAnswers++;
@@ -131,7 +136,6 @@ answerB.addEventListener("click", function () {
 });
 
 answerC.addEventListener("click", function () {
-  // show next question
   if (2 === questions[indexQuestions].answerIndex) {
     alert("Correct");
     rightAnswers++;
@@ -142,5 +146,20 @@ answerC.addEventListener("click", function () {
   indexQuestions++;
   displayQuestion();
 });
+function refreshPage() {
+  window.location.reload();
+}
+
+//EVENT LISTENERS FOR START BUTTON AND FINISH BUTTON
+
+startOver.addEventListener("click", function () {
+  refreshPage();
+});
+
+finishBtn.addEventListener("click", function () {
+  window.localStorage.clear();
+  refreshPage();
+});
 
 document.getElementById("startBtn").addEventListener("click", start);
+//document.getElementById("finishBtn").addEventListener("click", finish);
