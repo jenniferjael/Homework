@@ -8,14 +8,10 @@ h1 {
 #startBtn {
   border-width: 25px;
   border-color: lightcoral;
-  margin-top: 25%;
-  margin-bottom: 45%;
-  margin-left: 45%;
-  margin-right: 45%;
-}
-.img {
-  border-style: solid;
-  border-color: lightgoldenrodyellow;
+  margin-top: 05%;
+  margin-bottom: 95%;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
 .hide {
@@ -24,70 +20,19 @@ h1 {
 #timer{
     text-decoration: underline red;
 }
-#answerA {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #4caf50;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-#answerB {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: pink;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-#answerC {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: aquamarine;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
+
 #scoreBoard h2 {
-  border-style: solid;
-  border-color: aqua;
-  padding: 14px 28px;
   text-align: center;
-  text-decoration-color: blue;
-  background-color: darkcyan;
 }
 #scores {
-  border-style: solid;
-  border-color: aqua;
-  padding: 14px 28px;
   text-align: center;
-  text-decoration-color: blue;
-  background-color: cadetblue;
 }
-#finishBtn{
-  border-width: 10px;
-  border-color: lightcoral;
-  padding: 10px;
-  text-align: center;
-  margin-left: 45%;
-  margin-right: 45%;
-}
-#startOver{
-  border-width: 10px;
-  border-color: lightcoral;
-  padding: 10px;
-  text-align: center;
-  margin-left: 45%;
-  margin-right: 45%;
+.floated{
+    float:left;
+    margin-right:5px;
 }
 ul{
   background-color:lightcoral;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }

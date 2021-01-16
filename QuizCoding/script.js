@@ -1,6 +1,8 @@
+var name = prompt("ENTER YOUR INITIALS");
+
 //getting all requiered elements
-var intructionsBox = document.querySelector('#instructionsBox');
-var boxInt = document.querySelector('#boxInt');
+var intructionsBox = document.querySelector("#instructionsBox");
+var boxInt = document.querySelector("#boxInt");
 var startBtn = document.querySelector("#startBtn");
 var timerEl = document.querySelector("#timer");
 var questions = document.querySelector("#questons");
@@ -19,7 +21,6 @@ var displayDoneBtn = document.querySelector("#displayDoneBtn");
 var finishBtn = document.querySelector("#finishBtn");
 var displayStartOver = document.querySelector("#displayStartOver");
 var startOver = document.querySelector("#startOver");
-
 //STARTING POINTS
 var indexQuestions = 0;
 var rightAnswers = 0;
@@ -55,9 +56,6 @@ var questions = [
   },
 ];
 
-//ADDING A PROMPT TO SAVE USER'S NAME
-  var name = prompt("what is your name?");
- 
 //START BUTTON DISPLAYING TIMER AND QUESTIONS
 function start() {
   boxInt.style.display = "none";
@@ -65,8 +63,12 @@ function start() {
   setTime();
   displayQuestion();
 }
+
 //SCORE BOARD FUNCTION
 function scoreboard() {
+  if (localStorage.getItem("highScores") === null) {
+    localStorage.setItem("highScores", " ");
+  }
   //save current score
   var storage = localStorage.getItem("highScores");
   storage = storage + "," + rightAnswers;
@@ -111,6 +113,7 @@ function displayQuestion() {
 //CHOICES
 //SHOW NEXT QUESTION + EVENT LISTENERS
 //RIGHT/WRONG ANSWERS
+
 answerA.addEventListener("click", function () {
   if (0 === questions[indexQuestions].answerIndex) {
     alert("Correct");
@@ -162,4 +165,3 @@ finishBtn.addEventListener("click", function () {
 });
 
 document.getElementById("startBtn").addEventListener("click", start);
-//document.getElementById("finishBtn").addEventListener("click", finish);
